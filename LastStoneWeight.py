@@ -1,13 +1,13 @@
 import heapq
 
 class Solution:
-    def lastStoneWeight(self, stones): 
+    def lastStoneWeight(self, stones): #lastStoneWeight takes in the list of stone weights
 
-        #create a max heap by negating the stone weights bc heapq is a min heap by default
+        #since heapq is a min heap by default, we create a new max heap, storing all the numbers as negatives
         max_heap = [-s for s in stones] #negate the stone weights
-        heapq.heapify(max_heap) #transform list into a heap in O(n) time
+        heapq.heapify(max_heap) #transform list into a heap structure, removing the heaviest stone 
 
-        #we'll smash the stones
+        #where we smash at least two stones, stopping when there's less than 1
         while len(max_heap) > 1: #while there are at least two stones to smash
             first = -heapq.heappop(max_heap)  #heaviest stone
             second = -heapq.heappop(max_heap) #second heaviest stone
@@ -16,7 +16,7 @@ class Solution:
             if first != second:
                 heapq.heappush(max_heap, -(first - second))
 
-        #return the weight of the last stone or 0 if none left
+        #return the weight of the last stone if theres any left or 0 if none are left
         return -max_heap[0] if max_heap else 0
 
 #Test Example 1; Output = 1
