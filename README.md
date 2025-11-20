@@ -11,5 +11,5 @@ stone. If there are no stones left, return 0.
 This works as it's always picking between the two largest stones (following the greedy choice concept) and smashing them depending on whether they're equal or different, repeating until there's at least 1 stone left. If they're equal, both stones are smashed, but if they're different, we put back the difference. Repeating this helps as it's optimal that we pick the heaviest stone, so we can remove as much weight as possible each time.
 
 **COMPLEXITY:**
-Time: O(n log n)– the heap is O(n), every time we smash it's O(log n), and the max number of smashes is n-1
+Time: O(n log n)– the heap is O(n), every time we smash it's O(log n), and the max number of smashes is n-1 since we're at least decreasing by 1 stone when we smash.
 Space: O(n)– since the heap stores all the stones
