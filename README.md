@@ -9,7 +9,7 @@ stone. If there are no stones left, return 0.
 
 **WHY IT WORKS:**
 
-**GREEDY CHOICE: **
+**GREEDY CHOICE:**
 
 **COMPLEXITY:**
 
