@@ -8,8 +8,10 @@ At the end of the game, there is at most one stone left. Return the weight of th
 stone. If there are no stones left, return 0.
 
 **WHY IT WORKS:**
+This works as it's always picking between the two largest stones, which satisfies the greedy choice concept, and smashing them depending on whether they're equal or different, repeating until there's at least 1 stone left. If they're equal, both stones are smashed, but if they're different, we put back the difference. It's optimal we pick the heaviest stone, so we can remove as much weight as possible each time.
 
 **GREEDY CHOICE:**
+
 
 **COMPLEXITY:**
 
